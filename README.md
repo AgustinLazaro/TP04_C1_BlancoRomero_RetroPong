@@ -1,32 +1,73 @@
-# TP03_C1_BlancoRomero_RetroPong
- Practical Assignment 1C No. 03
+<p align="left">
+  <img src="https://storage-v4.globalgamejam.org/files/styles/sidebar_full/s3/jam_sites/2025/330671/site_poster/LogoIC_Fondo_Claro_Con%20Slogan_page-0001.jpg?VersionId=1zdZ1CkaHgAL1Z_VWFbkoWh7xSGc1QJS&itok=cY1Mh5lC" alt="Image Campus" width="200"/>
+</p>
+
+# TP04_C1_BlancoRomero_RetroPong
+
+### Itch.io
+https://agustinlazaro.itch.io/
+---
+
+## Español
+
+### Game details
+Descripción breve del juego: 
+
+### Cómo jugar
+* **W / S** (o Flechas): Movimiento de la paleta
+
+Explicación breve de las mecánicas principales
+(rebotes, aceleración de la pelota, multiplicadores de velocidad, power-ups, etc.).
+
+---
+
+## English
+
+### Game details
+Brief description of the game: 
+
+### How to play
+* **W / S** (or Arrows): Paddle movement
+
+Brief overview of the main mechanics 
+(bounces, ball speed progression, power-ups, etc.).
+
+---
+
+### Desarrollado Por / By
+Agustin Lazaro Blanco Romero
+
+### Créditos / Credits
+* **Sprites / Arte**: [kenney_ui-pack-adventure] https://kenney.nl/assets/ui-pack-adventure
+* **Audio / SFX**: 
+* **Fuentes**: [04b-30](https://www.dafont.com/es/04b-30.font)
 
 
----CLASS 03---
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ ### Practical Assignment 1C No. 04
+
+
+---CLASS 04---
 
 *Basic Requirements*
 
-- [✅] Have 2 players (Left and Right). 
-- [✅] Control Player 1 using W/S keys, and Player 2 using the Arrow keys.
-- [✅] Integrate 2 sprites so each player has their corresponding image.
-- [✅] Use "Delta Time" for all moving objects in the scene.
-- [✅] Include a Main Menu scene.
-- [✅] Include a Pause menu.
-- [✅] Constrain player movement within the game boundaries.
-- [✅] Implement ball movement.
-- [✅] Create an Options screen that pauses the game. 
-- [➖] Dynamically configure the following via the Options screen: Player speed, Paddle height, and Player color.
- ( The paddle height has not yet been implemented, and the options can only be configured via the settings in the game scene )
+- [✅] Include all mechanics from TP03
+- [✅] Move all dynamic scene objects using physics (Rigidbody -> AddForce)
+- [➖] Progressively increase ball speed over time or upon impact
+- [➖] Code readability and standardization (variables, declarations, functions, and classes)
+- [ ] Use Scriptable Objects for initialization variables
+- [ ] Best-of-5 match (first to 3 goals wins), configurable via "GameSettings" Scriptable Object
+- [ ] 20-second shot-clock limit to score (otherwise award goal against the side where the ball is), configurable via "GameSettings"
+- [ ] Change paddle color to Black when hitting any screen boundary
+- [ ] Change paddle color randomly when hitting the ball
+- [ ] Add horizontal paddle movement (A/D and left/right arrows) bounded between midfield and goal line
+- [ ] Define paddle behavior with Power-Ups (disable physical collisions or collect them on trigger)
 
 *Advanced Requirements*
 
-- [✅] Move players and the ball (and all moving objects) using physics (`Rigidbody` -> `AddForce`).
-- [✅] Increase ball speed progressively over time or upon paddle impacts.
-- [✅] Maintain code readability and standardize variables, declarations, functions, and classes.
-
-
-  *past the deadline* 9/7/26
-- [ ] Configure obstacles to despawn automatically 3 to 7 seconds after appearing.
-- [ ] Implement a power-up spawner (e.g., ball speed modifier, paddle size modifier, defenses, etc.).
-- [ ] Use the "Object Pool" design pattern for all spawners.
-- [ ] Implement an obstacle spawner in a random position (approximately in the center).
+- [ ] Obstacle system spawning at random positions near the center
+- [ ] Despawn obstacles between 3 and 7 seconds after spawning
+- [ ] Power-Up spawn system (e.g., ball speed, paddle size, shields)
+- [ ] Implement the "Object Pool" design pattern for spawners
