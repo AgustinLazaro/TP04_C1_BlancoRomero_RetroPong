@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Clase03/Scenes/MainMenu.unity
+    path: Assets/Clase04/Scenes/MainMenu.unity
     guid: 0f5511bc2a47206409f825bbe86a98b0
   - enabled: 1
-    path: Assets/Clase03/Scenes/Gameplay.unity
+    path: Assets/Clase04/Scenes/Gameplay.unity
     guid: 0e8f24fd73534cc45a2f7b70b16e633e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
