@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boundaries
   - Boundaries2
+  - Ball
   layers:
   - Default
   - TransparentFX

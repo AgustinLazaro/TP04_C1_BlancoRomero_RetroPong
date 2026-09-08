@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class IUmanager : MonoBehaviour
+public class MainMenuUI : MonoBehaviour
 {
 
     [Header("Config UI panels")]

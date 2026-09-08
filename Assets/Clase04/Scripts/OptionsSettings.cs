@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SettingsManager : MonoBehaviour
+public class OptionsSettings : MonoBehaviour
 {
     [Header("Config Player 1")]
     [SerializeField] private Slider sliderPlayer01;
