@@ -1,7 +1,6 @@
 <p align="left">
-  <img src="https://storage-v4.globalgamejam.org/files/styles/sidebar_full/s3/jam_sites/2025/330671/site_poster/LogoIC_Fondo_Claro_Con%20Slogan_page-0001.jpg?VersionId=1zdZ1CkaHgAL1Z_VWFbkoWh7xSGc1QJS&itok=cY1Mh5lC" alt="Image Campus" width="200"/>
+  <img src="./logo.jpg" alt="Image Campus" width="200"/>
 </p>
-
 # TP04_C1_BlancoRomero_RetroPong
 
 ### Itch.io
