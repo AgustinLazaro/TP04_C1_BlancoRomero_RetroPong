@@ -56,6 +56,22 @@ public class MatchManager : MonoBehaviour
         CheckWinCondition();
     }
 
+    public void ScoreGoal(int scoringPlayer)
+    {
+        if (scoringPlayer == 2)
+        {
+            _player2Score++;
+            Debug.Log($"Punto Jugador 2. puntaje: {_player1Score} - {_player2Score}");
+        }
+        else if (scoringPlayer == 1)
+        {
+            _player1Score++;
+            Debug.Log($"Punto Jugador 1. puntaje: {_player1Score} - {_player2Score}");
+        }
+
+        CheckWinCondition();
+    }
+
     private void CheckWinCondition()
     {
         if (_player1Score >= _settings.PointsToWin)
