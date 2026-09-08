@@ -3,6 +3,7 @@ public class BallMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Vector2 currentDirection;
+     private float _initialForceMagnitude;
 
 
     [Header("Ball Properties")]
@@ -10,9 +11,21 @@ public class BallMovement : MonoBehaviour
     [SerializeField] private float speedMultiplier = 1.02f;
     [SerializeField] private float startAngleLimit = 0.7f;
     [SerializeField] private float randomBounce = 0.20f;
-    private void Start()
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        _initialForceMagnitude = forceMagnitude;
+    }
+
+    private void Start()
+    {
+        LaunchBall();
+    }
+
+    public void LaunchBall()
+    {
+        forceMagnitude = _initialForceMagnitude;
 
         float directionX;
         if (Random.Range(0, 2) == 0)
@@ -26,10 +39,20 @@ public class BallMovement : MonoBehaviour
 
         float directionY = Random.Range(-startAngleLimit, startAngleLimit);
 
-
         currentDirection = new Vector2(directionX, directionY).normalized;
 
+        rb.linearVelocity = Vector2.zero;
+
+        rb.angularVelocity = 0f;
+
         rb.AddForce(currentDirection * forceMagnitude);
+    }
+
+    public void ResetBall()
+    {
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        transform.position = Vector3.zero;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -62,6 +85,9 @@ public class BallMovement : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(currentDirection * forceMagnitude);
     }
+
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
