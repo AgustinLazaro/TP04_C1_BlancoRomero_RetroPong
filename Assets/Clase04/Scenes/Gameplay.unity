@@ -6167,6 +6167,7 @@ GameObject:
   - component: {fileID: 2000913998}
   - component: {fileID: 2000913999}
   - component: {fileID: 2000914000}
+  - component: {fileID: 2000914001}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6231,6 +6232,20 @@ MonoBehaviour:
   optionsButton: {fileID: 1110989133}
   backToMenuButton: {fileID: 1929262968}
   backOptionsButton: {fileID: 581947522}
+--- !u!114 &2000914001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000913997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0593ef7cc452445ad3a7a871926767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MatchManager
+  _settings: {fileID: 11400000, guid: bf297e493d24d2b438884efbb155403f, type: 2}
+  _ball: {fileID: 0}
 --- !u!1 &2007261306
 GameObject:
   m_ObjectHideFlags: 0
