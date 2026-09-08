@@ -56,7 +56,7 @@ Agustin Lazaro Blanco Romero
 - [✅] Move all dynamic scene objects using physics (Rigidbody -> AddForce)
 - [➖] Progressively increase ball speed over time or upon impact
 - [➖] Code readability and standardization (variables, declarations, functions, and classes)
-- [ ] Use Scriptable Objects for initialization variables
+- [✅] Use Scriptable Objects for initialization variables
 - [✅] Best-of-5 match (first to 3 goals wins), configurable via "GameSettings" Scriptable Object
 - [✅] 20-second shot-clock limit to score (otherwise award goal against the side where the ball is), configurable via "GameSettings"
 - [ ] Change paddle color to Black when hitting any screen boundary
