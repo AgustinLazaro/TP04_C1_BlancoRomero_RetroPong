@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class OptionsSettings : MonoBehaviour
+public class SettingsPanelUI : MonoBehaviour
 {
     [Header("Data Source")]
     [SerializeField] private PlayerSettings settingsData;
