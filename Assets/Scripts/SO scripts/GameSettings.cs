@@ -15,7 +15,7 @@ public class GameSettings : ScriptableObject
     [SerializeField] private float _initialBallSpeed = 5f;
     [SerializeField] private float _speedPerHit = 0.5f;
 
-
+    //solo se lee, no modifica
     public int PointsToWin => _pointsToWin;
     public float ShotClockDuration => _shotClockDuration;
     public float InitialBallSpeed => _initialBallSpeed;
