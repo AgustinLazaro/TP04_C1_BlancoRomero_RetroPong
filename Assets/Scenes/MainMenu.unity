@@ -250,8 +250,10 @@ MonoBehaviour:
   optionsPanel: {fileID: 23940086}
   creditsPanel: {fileID: 1693647718}
   playButton: {fileID: 1819638480}
+  optionsButton: {fileID: 171766028}
   creditsButton: {fileID: 1431347971}
   exitButton: {fileID: 186761881}
+  backOptionsButton: {fileID: 88135912}
   backCreditsButton: {fileID: 207108019}
 --- !u!114 &33038603
 MonoBehaviour:
@@ -265,18 +267,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7794ca522e1a98489ad8d42b98a0511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
+  settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
   sliderPlayer01: {fileID: 335594880}
   textPlayer01: {fileID: 1979422601}
-  scriptPlayer1: {fileID: 0}
   colorSliderP1: {fileID: 43292936}
   textColorP1: {fileID: 70228860}
-  colorScriptPlayer1: {fileID: 0}
   sliderPlayer02: {fileID: 53835649}
   textPlayer02: {fileID: 1818445428}
-  scriptPlayer2: {fileID: 0}
   colorSliderP2: {fileID: 336365030}
   textColorP2: {fileID: 179190926}
-  colorScriptPlayer2: {fileID: 0}
 --- !u!1 &43292934
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &171766027
 RectTransform:
   m_ObjectHideFlags: 0
@@ -902,7 +901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 371, y: -84}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &171766028
@@ -4584,7 +4583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 16}
+  m_AnchoredPosition: {x: 0, y: 60}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1819638480

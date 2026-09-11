@@ -4,6 +4,12 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 
 {
+    [Header("Player ID")]
+    [SerializeField] private int playerNumber = 1;
+
+    [Header("Settings Data")]
+    [SerializeField] private PlayerSettings settingsData;
+
     [Header("Config Movement")]
     [SerializeField] private KeyCode MoveUp = KeyCode.W;
     [SerializeField] private KeyCode MoveDown = KeyCode.S;
@@ -21,6 +27,8 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        ApplySpeedSettings();
+
         float yDirection = 0f;
 
         if (Input.GetKey(MoveUp))
@@ -40,4 +48,17 @@ public class Movement : MonoBehaviour
     {
         rb.AddForce(moveDirection * moveSpeed, ForceMode2D.Force);
     }
+
+    private void ApplySpeedSettings()
+    {
+        if (playerNumber == 1)
+        {
+            moveSpeed = settingsData.p1Speed;
+        }
+        else
+        {
+            moveSpeed = settingsData.p2Speed;
+        }
+    }
 }
+

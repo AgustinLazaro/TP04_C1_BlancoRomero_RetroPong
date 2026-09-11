@@ -4872,6 +4872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b919b757314f52408c680063d727434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomColor
+  playerNumber: 2
+  settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
   sprite: {fileID: 1725450819}
 --- !u!114 &1725450818
 MonoBehaviour:
@@ -4885,6 +4887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5d9adec5481af48a916b01d4546523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
+  playerNumber: 2
+  settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
   MoveUp: 273
   MoveDown: 274
   moveSpeed: 150
@@ -5962,6 +5966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b919b757314f52408c680063d727434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomColor
+  playerNumber: 1
+  settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
   sprite: {fileID: 1888348000}
 --- !u!114 &1888348003
 MonoBehaviour:
@@ -5975,6 +5981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5d9adec5481af48a916b01d4546523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
+  playerNumber: 1
+  settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
   MoveUp: 119
   MoveDown: 115
   moveSpeed: 150
@@ -6823,8 +6831,10 @@ MonoBehaviour:
   optionsPanel: {fileID: 102683268}
   creditsPanel: {fileID: 0}
   playButton: {fileID: 0}
+  optionsButton: {fileID: 0}
   creditsButton: {fileID: 0}
   exitButton: {fileID: 0}
+  backOptionsButton: {fileID: 0}
   backCreditsButton: {fileID: 0}
 --- !u!1 &2000913997
 GameObject:
@@ -6872,18 +6882,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7794ca522e1a98489ad8d42b98a0511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
+  settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
   sliderPlayer01: {fileID: 96388981}
   textPlayer01: {fileID: 1372441218}
-  scriptPlayer1: {fileID: 1888348003}
   colorSliderP1: {fileID: 534712416}
   textColorP1: {fileID: 1825076451}
-  colorScriptPlayer1: {fileID: 1888348002}
   sliderPlayer02: {fileID: 1457889275}
   textPlayer02: {fileID: 360747555}
-  scriptPlayer2: {fileID: 1725450818}
   colorSliderP2: {fileID: 1465386794}
   textColorP2: {fileID: 1365954713}
-  colorScriptPlayer2: {fileID: 1725450817}
 --- !u!114 &2000914000
 MonoBehaviour:
   m_ObjectHideFlags: 0

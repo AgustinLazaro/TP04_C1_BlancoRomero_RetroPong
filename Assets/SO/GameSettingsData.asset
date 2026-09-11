@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 411d2cf5de8b30e40a81a7ffec6ce43b, type: 3}
-  m_Name: GameSettings
+  m_Name: GameSettingsData
   m_EditorClassIdentifier: Assembly-CSharp::GameSettings
   _pointsToWin: 3
   _shotClockDuration: 20
