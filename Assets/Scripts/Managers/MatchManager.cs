@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class MatchManager : MonoBehaviour
 {
+    [Header("UIreference")]
+    [SerializeField] private HUDManager _hudManager;
+
     [Header("Config")]
     [SerializeField] private GameSettings _settings;
 
@@ -16,6 +19,7 @@ public class MatchManager : MonoBehaviour
 
     private void Start()
     {
+        _hudManager.UpdateScore(_player1Score,_player2Score);
         StartRound();
     }
 
@@ -36,7 +40,14 @@ public class MatchManager : MonoBehaviour
             _shotClockTimer = 0f;
             _isTimerRunning = false;
 
+            _hudManager.UpdateShotClock(_shotClockTimer);
+
             ShotClockTimeout();
+        }
+        else
+        {
+            //decreciendo
+            _hudManager.UpdateShotClock(_shotClockTimer); 
         }
     }
 
@@ -53,6 +64,7 @@ public class MatchManager : MonoBehaviour
             Debug.Log($"Punto Jugador 1. puntaje: {_player1Score} - {_player2Score}");
         }
 
+        _hudManager.UpdateScore(_player1Score, _player2Score);
         CheckWinCondition();
     }
 
@@ -68,7 +80,7 @@ public class MatchManager : MonoBehaviour
             _player1Score++;
             Debug.Log($"Punto Jugador 1. puntaje: {_player1Score} - {_player2Score}");
         }
-
+        _hudManager.UpdateScore(_player1Score, _player2Score);
         CheckWinCondition();
     }
 
@@ -98,6 +110,8 @@ public class MatchManager : MonoBehaviour
     {
         _shotClockTimer = _settings.ShotClockDuration;
         _isTimerRunning = true;
+
+        _hudManager.UpdateShotClock(_shotClockTimer);
 
         _ball.ResetBall();
         _ball.LaunchBall();
