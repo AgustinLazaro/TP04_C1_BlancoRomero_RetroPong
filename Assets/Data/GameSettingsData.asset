@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameSettings
   _pointsToWin: 3
   _shotClockDuration: 20
-  _initialBallSpeed: 5
-  _speedPerHit: 0.5
+  _initialBallSpeed: 300
+  _speedPerHit: 100

@@ -2268,10 +2268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d836836cb59ce448bbc43b979633766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallMovement
-  rb: {fileID: 0}
-  currentDirection: {x: 0, y: 0}
-  forceMagnitude: 300
-  speedMultiplier: 1.02
+  _settings: {fileID: 11400000, guid: bf297e493d24d2b438884efbb155403f, type: 2}
+  rb: {fileID: 553512187}
   startAngleLimit: 0.5
   randomBounce: 0.2
 --- !u!1 &581947520

@@ -1,21 +1,22 @@
 using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
+    [Header("Config")]
+    [SerializeField] private GameSettings _settings;
+
+    [Header("Components")]
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Vector2 currentDirection;
-     private float _initialForceMagnitude;
 
-
-    [Header("Ball Properties")]
-    [SerializeField] private float forceMagnitude = 300f;
-    [SerializeField] private float speedMultiplier = 1.02f;
+    [Header("Angle Settings")]
     [SerializeField] private float startAngleLimit = 0.7f;
     [SerializeField] private float randomBounce = 0.20f;
+
+    private Vector2 currentDirection;
+    private float forceMagnitude;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        _initialForceMagnitude = forceMagnitude;
     }
 
     private void Start()
@@ -25,7 +26,7 @@ public class BallMovement : MonoBehaviour
 
     public void LaunchBall()
     {
-        forceMagnitude = _initialForceMagnitude;
+        forceMagnitude = _settings.InitialBallSpeed;
 
         float directionX;
         if (Random.Range(0, 2) == 0)
@@ -42,7 +43,6 @@ public class BallMovement : MonoBehaviour
         currentDirection = new Vector2(directionX, directionY).normalized;
 
         rb.linearVelocity = Vector2.zero;
-
         rb.angularVelocity = 0f;
 
         rb.AddForce(currentDirection * forceMagnitude);
@@ -57,27 +57,24 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-      
         if (collision.gameObject.CompareTag("Player"))
         {
             currentDirection.x = currentDirection.x * -1f;
             currentDirection.y += Random.Range(-randomBounce, randomBounce);
-            forceMagnitude = forceMagnitude * speedMultiplier;
+
+            forceMagnitude += _settings.SpeedPerHit;
         }
 
-        
         if (collision.gameObject.CompareTag("Boundaries"))
         {
             currentDirection.y = currentDirection.y * -1f;
             currentDirection.x += Random.Range(-randomBounce, randomBounce);
         }
 
-
         if (collision.gameObject.CompareTag("Boundaries2"))
         {
             currentDirection.x = currentDirection.x * -1f;
             currentDirection.y += Random.Range(-randomBounce, randomBounce);
-            
         }
 
         currentDirection = currentDirection.normalized;
@@ -85,6 +82,8 @@ public class BallMovement : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(currentDirection * forceMagnitude);
     }
+
+
 
 
 
