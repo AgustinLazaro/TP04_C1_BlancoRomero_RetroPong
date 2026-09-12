@@ -61,7 +61,7 @@ Agustin Lazaro Blanco Romero
 - [✅] 20-second shot-clock limit to score (otherwise award goal against the side where the ball is), configurable via "GameSettings"
 - [✅] Change paddle color to Black when hitting any screen boundary
 - [✅] Change paddle color randomly when hitting the ball
-- [ ] Add horizontal paddle movement (A/D and left/right arrows) bounded between midfield and goal line
+- [✅] Add horizontal paddle movement (A/D and left/right arrows) bounded between midfield and goal line
 - [ ] Define paddle behavior with Power-Ups (disable physical collisions or collect them on trigger)
 
 *Advanced Requirements*
