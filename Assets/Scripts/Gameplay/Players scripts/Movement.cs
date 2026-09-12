@@ -1,8 +1,6 @@
-
 using UnityEngine;
 
 public class Movement : MonoBehaviour
-
 {
     [Header("Player ID")]
     [SerializeField] private int playerNumber = 1;
@@ -18,11 +16,18 @@ public class Movement : MonoBehaviour
     public float moveSpeed = 300f;
 
     private Rigidbody2D rb;
+    private SpriteRenderer _spriteRenderer;
     private Vector2 moveDirection;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        ApplyInitialColor();
     }
 
     private void Update()
@@ -60,5 +65,33 @@ public class Movement : MonoBehaviour
             moveSpeed = settingsData.p2Speed;
         }
     }
+
+    private void ApplyInitialColor()
+    {
+        if (playerNumber == 1)
+        { 
+            _spriteRenderer.color = settingsData.p1Color;
+        }
+        else
+        { 
+            _spriteRenderer.color = settingsData.p2Color;
+        }
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boundaries"))
+        {
+            _spriteRenderer.color = Color.black;
+        }
+
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            _spriteRenderer.color = new Color(Random.value, Random.value, Random.value);
+        }
+    }
 }
+
+
 
