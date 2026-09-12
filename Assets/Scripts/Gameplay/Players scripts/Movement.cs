@@ -8,9 +8,13 @@ public class Movement : MonoBehaviour
     [Header("Settings Data")]
     [SerializeField] private PlayerSettings settingsData;
 
-    [Header("Config Movement")]
+    [Header("Config Movement Vertical")]
     [SerializeField] private KeyCode MoveUp = KeyCode.W;
     [SerializeField] private KeyCode MoveDown = KeyCode.S;
+
+    [Header("Config Movement Horizontal")]
+    [SerializeField] private KeyCode MoveLeft = KeyCode.A;
+    [SerializeField] private KeyCode MoveRight = KeyCode.D;
 
     [Header("Config Speed")]
     public float moveSpeed = 300f;
@@ -35,6 +39,7 @@ public class Movement : MonoBehaviour
         ApplySpeedSettings();
 
         float yDirection = 0f;
+        float xDirection = 0f;
 
         if (Input.GetKey(MoveUp))
         {
@@ -46,7 +51,17 @@ public class Movement : MonoBehaviour
             yDirection = -1f;
         }
 
-        moveDirection = new Vector2(0f, yDirection).normalized;
+        if (Input.GetKey(MoveRight))
+        {
+            xDirection = 1f;
+        }
+
+        if (Input.GetKey(MoveLeft))
+        {
+            xDirection = -1f;
+        }
+
+        moveDirection = new Vector2(xDirection, yDirection).normalized;
     }
 
     private void FixedUpdate()

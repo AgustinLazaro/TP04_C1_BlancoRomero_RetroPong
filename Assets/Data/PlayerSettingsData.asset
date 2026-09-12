@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0c336b188ef404aba0753675b1ffcd, type: 3}
   m_Name: PlayerSettingsData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSettings
-  p1Speed: 10
+  defaultP1Speed: 100
+  defaultP2Speed: 100
+  defaultP1ColorIndex: 0
+  defaultP2ColorIndex: 0
+  defaultP1Color: {r: 1, g: 1, b: 1, a: 1}
+  defaultP2Color: {r: 1, g: 0.44, b: 0.44, a: 1}
+  p1Speed: 150
   p1ColorIndex: 0
-  P1Color: {r: 1, g: 1, b: 1, a: 1}
-  p2Speed: 10
+  p1Color: {r: 1, g: 1, b: 1, a: 1}
+  p2Speed: 150
   p2ColorIndex: 0
-  P2Color: {r: 1, g: 0.44, b: 0.44, a: 1}
+  p2Color: {r: 1, g: 0.44, b: 0.44, a: 1}
