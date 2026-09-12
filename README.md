@@ -54,13 +54,13 @@ Agustin Lazaro Blanco Romero
 
 - [✅] Include all mechanics from TP03
 - [✅] Move all dynamic scene objects using physics (Rigidbody -> AddForce)
-- [➖] Progressively increase ball speed over time or upon impact
+- [✅] Progressively increase ball speed over time or upon impact
 - [➖] Code readability and standardization (variables, declarations, functions, and classes)
 - [✅] Use Scriptable Objects for initialization variables
 - [✅] Best-of-5 match (first to 3 goals wins), configurable via "GameSettings" Scriptable Object
 - [✅] 20-second shot-clock limit to score (otherwise award goal against the side where the ball is), configurable via "GameSettings"
-- [ ] Change paddle color to Black when hitting any screen boundary
-- [ ] Change paddle color randomly when hitting the ball
+- [✅] Change paddle color to Black when hitting any screen boundary
+- [✅] Change paddle color randomly when hitting the ball
 - [ ] Add horizontal paddle movement (A/D and left/right arrows) bounded between midfield and goal line
 - [ ] Define paddle behavior with Power-Ups (disable physical collisions or collect them on trigger)
 
