@@ -42,31 +42,3 @@ Agustin Lazaro Blanco Romero
 * **Fuentes**: [04b-30](https://www.dafont.com/es/04b-30.font)
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
- ### Practical Assignment 1C No. 04
-
-
----CLASS 04---
-
-*Basic Requirements*
-
-- [✅] Include all mechanics from TP03
-- [✅] Move all dynamic scene objects using physics (Rigidbody -> AddForce)
-- [✅] Progressively increase ball speed over time or upon impact
-- [➖] Code readability and standardization (variables, declarations, functions, and classes)
-- [✅] Use Scriptable Objects for initialization variables
-- [✅] Best-of-5 match (first to 3 goals wins), configurable via "GameSettings" Scriptable Object
-- [✅] 20-second shot-clock limit to score (otherwise award goal against the side where the ball is), configurable via "GameSettings"
-- [✅] Change paddle color to Black when hitting any screen boundary
-- [✅] Change paddle color randomly when hitting the ball
-- [ ] Add horizontal paddle movement (A/D and left/right arrows) bounded between midfield and goal line
-- [ ] Define paddle behavior with Power-Ups (disable physical collisions or collect them on trigger)
-
-*Advanced Requirements*
-
-- [ ] Obstacle system spawning at random positions near the center
-- [ ] Despawn obstacles between 3 and 7 seconds after spawning
-- [ ] Power-Up spawn system (e.g., ball speed, paddle size, shields)
-- [ ] Implement the "Object Pool" design pattern for spawners
