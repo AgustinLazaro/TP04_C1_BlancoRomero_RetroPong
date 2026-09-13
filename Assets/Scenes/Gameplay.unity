@@ -9623,6 +9623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
   settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
+  gameSettingsData: {fileID: 11400000, guid: bf297e493d24d2b438884efbb155403f, type: 2}
   sliderPlayer01: {fileID: 96388981}
   textPlayer01: {fileID: 1372441218}
   colorSliderP1: {fileID: 534712416}
@@ -9631,6 +9632,10 @@ MonoBehaviour:
   textPlayer02: {fileID: 360747555}
   colorSliderP2: {fileID: 1465386794}
   textColorP2: {fileID: 1365954713}
+  sliderMatchPoints: {fileID: 216461158}
+  textMatchPoints: {fileID: 1154379538}
+  sliderShotClock: {fileID: 210387103}
+  textShotClock: {fileID: 421818339}
 --- !u!1 &2000913997
 GameObject:
   m_ObjectHideFlags: 0

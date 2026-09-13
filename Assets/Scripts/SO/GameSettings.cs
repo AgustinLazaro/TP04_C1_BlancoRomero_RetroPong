@@ -3,21 +3,37 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameSettings", menuName = "Scriptable Objects/GameSettings")]
 public class GameSettings : ScriptableObject
 {
+    [Header("Default Values")]
+    [SerializeField] private int defaultPointsToWin = 3;
+    [SerializeField] private float defaultShotClockDuration = 20f;
+    [SerializeField] private float defaultInitialBallSpeed = 300f;
+    [SerializeField] private float defaultSpeedPerHit = 15f;
+
     [Header("Match Rules")]
-    [Tooltip("Puntos necesarios para ganar")]
-    [SerializeField] private int _pointsToWin = 3;
+    public int pointsToWin = 3;
 
     [Header("Timers")]
-    [Tooltip("Tiempo limite en segundos para marcar")]
-    [SerializeField] private float _shotClockDuration = 20f;
+    public float shotClockDuration = 20f;
 
     [Header("Ball Mechanics")]
-    [SerializeField] private float _initialBallSpeed = 300f;
-    [SerializeField] private float _speedPerHit = 15f;
+    public float initialBallSpeed = 300f;
+    public float speedPerHit = 15f;
 
-    //solo se lee, no modifica
-    public int PointsToWin => _pointsToWin;
-    public float ShotClockDuration => _shotClockDuration;
-    public float InitialBallSpeed => _initialBallSpeed;
-    public float SpeedPerHit => _speedPerHit;
+    public int PointsToWin => pointsToWin;
+    public float ShotClockDuration => shotClockDuration;
+    public float InitialBallSpeed => initialBallSpeed; 
+    public float SpeedPerHit => speedPerHit;
+
+    private void OnEnable()
+    {
+        ResetDefaults();
+    }
+
+    private void ResetDefaults()
+    {
+        pointsToWin = defaultPointsToWin;
+        shotClockDuration = defaultShotClockDuration;
+        initialBallSpeed = defaultInitialBallSpeed;
+        speedPerHit = defaultSpeedPerHit;
+    }
 }
