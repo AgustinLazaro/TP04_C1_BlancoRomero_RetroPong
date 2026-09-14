@@ -164,15 +164,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1bab34b12075a743bca9840091f4ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IUmanager
-  mainMenuPanel: {fileID: 2051886197}
-  optionsPanel: {fileID: 981150851}
-  creditsPanel: {fileID: 1693647718}
-  playButton: {fileID: 1819638480}
-  optionsButton: {fileID: 171766028}
-  creditsButton: {fileID: 1431347971}
-  exitButton: {fileID: 186761881}
-  backOptionsButton: {fileID: 1017820102}
-  backCreditsButton: {fileID: 207108019}
+  _mainMenuPanel: {fileID: 2051886197}
+  _optionsPanel: {fileID: 981150851}
+  _creditsPanel: {fileID: 1693647718}
+  _playButton: {fileID: 1819638480}
+  _optionsButton: {fileID: 171766028}
+  _creditsButton: {fileID: 1431347971}
+  _exitButton: {fileID: 186761881}
+  _backOptionsButton: {fileID: 1017820102}
+  _backCreditsButton: {fileID: 207108019}
 --- !u!114 &33038603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,20 +185,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7794ca522e1a98489ad8d42b98a0511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
-  settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
-  gameSettingsData: {fileID: 11400000, guid: bf297e493d24d2b438884efbb155403f, type: 2}
-  sliderPlayer01: {fileID: 409451340}
-  textPlayer01: {fileID: 855977574}
-  colorSliderP1: {fileID: 1038007939}
-  textColorP1: {fileID: 1049552929}
-  sliderPlayer02: {fileID: 395126760}
-  textPlayer02: {fileID: 44577995}
-  colorSliderP2: {fileID: 625415119}
-  textColorP2: {fileID: 1349583921}
-  sliderMatchPoints: {fileID: 1532054555}
-  textMatchPoints: {fileID: 1743394511}
-  sliderShotClock: {fileID: 1934705396}
-  textShotClock: {fileID: 1823939054}
+  _settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
+  _gameSettingsData: {fileID: 11400000, guid: bf297e493d24d2b438884efbb155403f, type: 2}
+  _sliderPlayer01: {fileID: 409451340}
+  _textPlayer01: {fileID: 855977574}
+  _colorSliderP1: {fileID: 1038007939}
+  _textColorP1: {fileID: 1049552929}
+  _sliderPlayer02: {fileID: 395126760}
+  _textPlayer02: {fileID: 44577995}
+  _colorSliderP2: {fileID: 625415119}
+  _textColorP2: {fileID: 1349583921}
+  _sliderMatchPoints: {fileID: 1532054555}
+  _textMatchPoints: {fileID: 1743394511}
+  _sliderShotClock: {fileID: 1934705396}
+  _textShotClock: {fileID: 1823939054}
 --- !u!1 &44577993
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 44577996}
   - component: {fileID: 44577995}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TextSpeed02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 78075525}
   - component: {fileID: 78075524}
   m_Layer: 0
-  m_Name: TimerTitle (1)
+  m_Name: 'TimerTitle '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3028,7 +3028,7 @@ GameObject:
   - component: {fileID: 855977575}
   - component: {fileID: 855977574}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TextSpeed01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4073,7 +4073,7 @@ GameObject:
   - component: {fileID: 1049552930}
   - component: {fileID: 1049552929}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TextColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5269,7 +5269,7 @@ GameObject:
   - component: {fileID: 1349583922}
   - component: {fileID: 1349583921}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TextColor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5938,7 +5938,7 @@ GameObject:
   - component: {fileID: 1532054554}
   - component: {fileID: 1532054555}
   m_Layer: 0
-  m_Name: SliderPointWin
+  m_Name: SliderMatchPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6759,7 +6759,7 @@ GameObject:
   - component: {fileID: 1743394512}
   - component: {fileID: 1743394511}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TextMatchPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7242,7 +7242,7 @@ GameObject:
   - component: {fileID: 1823939055}
   - component: {fileID: 1823939054}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TextClock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

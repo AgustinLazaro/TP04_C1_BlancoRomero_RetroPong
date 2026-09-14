@@ -1,35 +1,42 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; 
-using UnityEngine.UI; 
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class GameplayMenuUI : MonoBehaviour
 {
     [Header("Panels")]
-    [SerializeField] private GameObject pauseMenuPanel;
-    [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject _pauseMenuPanel;
+    [SerializeField] private GameObject _optionsPanel;
 
     [Header("Buttons")]
-    [SerializeField] private Button continueButton;
-    [SerializeField] private Button optionsButton;
-    [SerializeField] private Button backToMenuButton;
-    [SerializeField] private Button backOptionsButton;
+    [SerializeField] private Button _continueButton;
+    [SerializeField] private Button _optionsButton;
+    [SerializeField] private Button _backToMenuButton;
+    [SerializeField] private Button _backOptionsButton;
 
     private void Start()
     {
         Time.timeScale = 1f;
 
-        continueButton.onClick.AddListener(TogglePause);
-        optionsButton.onClick.AddListener(ShowOptions);
-        backToMenuButton.onClick.AddListener(ReturnToMainMenu);
+        _continueButton.onClick.AddListener(TogglePause);
+        _optionsButton.onClick.AddListener(ShowOptions);
+        _backToMenuButton.onClick.AddListener(ReturnToMainMenu);
+        _backOptionsButton.onClick.AddListener(HideOptions);
+    }
 
-        backOptionsButton.onClick.AddListener(HideOptions);
+    private void OnDestroy()
+    {
+        _continueButton.onClick.RemoveListener(TogglePause);
+        _optionsButton.onClick.RemoveListener(ShowOptions);
+        _backToMenuButton.onClick.RemoveListener(ReturnToMainMenu);
+        _backOptionsButton.onClick.RemoveListener(HideOptions);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            
-            if (optionsPanel.activeSelf)
+            if (_optionsPanel.activeSelf)
             {
                 HideOptions();
             }
@@ -42,34 +49,31 @@ public class GameplayMenuUI : MonoBehaviour
 
     public void TogglePause()
     {
-        pauseMenuPanel.SetActive(!pauseMenuPanel.activeSelf);
+        _pauseMenuPanel.SetActive(!_pauseMenuPanel.activeSelf);
 
-        if (pauseMenuPanel.activeSelf)
+        if (_pauseMenuPanel.activeSelf)
         {
-            Time.timeScale = 0f; 
+            Time.timeScale = 0f;
         }
         else
         {
-            Time.timeScale = 1f; 
+            Time.timeScale = 1f;
         }
     }
 
-    public void ShowOptions()
+    private void ShowOptions()
     {
-        optionsPanel.SetActive(true);
+        _optionsPanel.SetActive(true);
     }
 
-    public void HideOptions()
+    private void HideOptions()
     {
-        optionsPanel.SetActive(false);
+        _optionsPanel.SetActive(false);
     }
 
-    public void ReturnToMainMenu()
+    private void ReturnToMainMenu()
     {
-       
         Time.timeScale = 1f;
-
-       
         SceneManager.LoadScene("MainMenu");
     }
 }

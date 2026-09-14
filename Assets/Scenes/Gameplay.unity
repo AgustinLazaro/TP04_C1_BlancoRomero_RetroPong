@@ -671,7 +671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &102683269
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1673,7 +1673,7 @@ RectTransform:
   m_Father: {fileID: 1342535172}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5.5528946, y: -1.8589001}
   m_SizeDelta: {x: 39.3184, y: -1.1698}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1727,7 +1727,7 @@ GameObject:
   - component: {fileID: 360747556}
   - component: {fileID: 360747555}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TextSpeed2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2200,8 +2200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 240, y: 30}
+  m_AnchoredPosition: {x: -63.340088, y: 50}
+  m_SizeDelta: {x: 113.3198, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &421818339
 MonoBehaviour:
@@ -2336,7 +2336,7 @@ RectTransform:
   m_Father: {fileID: 238776446}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2532,7 +2532,7 @@ RectTransform:
   m_Father: {fileID: 849698987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3569,9 +3569,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallMovement
   _settings: {fileID: 11400000, guid: bf297e493d24d2b438884efbb155403f, type: 2}
-  rb: {fileID: 553512187}
-  startAngleLimit: 0.5
-  randomBounce: 0.2
+  _startAngleLimit: 0.7
+  _randomBounce: 0.2
 --- !u!1 &581947520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3801,7 +3800,7 @@ RectTransform:
   m_Father: {fileID: 32462483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5.5528946, y: -1.8589001}
   m_SizeDelta: {x: 39.3184, y: -1.1698}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5036,7 +5035,7 @@ RectTransform:
   m_Father: {fileID: 452796225}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5.77, y: 0.6309}
   m_SizeDelta: {x: 39.3184, y: -1.1698}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5606,7 +5605,7 @@ RectTransform:
   m_Father: {fileID: 514113537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5.5529, y: -1.8589}
   m_SizeDelta: {x: 39.3184, y: -1.1698}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5803,8 +5802,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 240, y: 30}
+  m_AnchoredPosition: {x: -60, y: 50}
+  m_SizeDelta: {x: 120, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1154379538
 MonoBehaviour:
@@ -6635,7 +6634,7 @@ GameObject:
   - component: {fileID: 1365954714}
   - component: {fileID: 1365954713}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TextColor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6772,7 +6771,7 @@ GameObject:
   - component: {fileID: 1372441219}
   - component: {fileID: 1372441218}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TextSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7656,7 +7655,7 @@ RectTransform:
   m_Father: {fileID: 629035936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5.77, y: 0.6309}
   m_SizeDelta: {x: 39.3184, y: -1.1698}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7852,7 +7851,7 @@ RectTransform:
   m_Father: {fileID: 1441277177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8457,10 +8456,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   _playerNumber: 2
   _settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
-  _moveUp: 119
-  _moveDown: 115
-  _moveLeft: 273
-  _moveRight: 274
+  _moveUp: 273
+  _moveDown: 274
+  _moveLeft: 276
+  _moveRight: 275
   _moveSpeed: 300
 --- !u!212 &1725450819
 SpriteRenderer:
@@ -9159,7 +9158,7 @@ RectTransform:
   m_Father: {fileID: 875854829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9213,7 +9212,7 @@ GameObject:
   - component: {fileID: 1825076452}
   - component: {fileID: 1825076451}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TextColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9371,7 +9370,7 @@ RectTransform:
   m_Father: {fileID: 1128462749}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5.5529, y: -1.8589}
   m_SizeDelta: {x: 39.3184, y: -1.1698}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9446,7 +9445,7 @@ RectTransform:
   m_Father: {fileID: 1051839404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10730,12 +10729,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20104c658fc04c04ab7c80abc5c6ad37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuManager
-  pauseMenuPanel: {fileID: 1094614484}
-  optionsPanel: {fileID: 102683268}
-  continueButton: {fileID: 404477631}
-  optionsButton: {fileID: 1110989133}
-  backToMenuButton: {fileID: 1929262968}
-  backOptionsButton: {fileID: 581947522}
+  _pauseMenuPanel: {fileID: 1094614484}
+  _optionsPanel: {fileID: 102683268}
+  _continueButton: {fileID: 404477631}
+  _optionsButton: {fileID: 1110989133}
+  _backToMenuButton: {fileID: 1929262968}
+  _backOptionsButton: {fileID: 581947522}
 --- !u!114 &1984795257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10748,20 +10747,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7794ca522e1a98489ad8d42b98a0511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
-  settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
-  gameSettingsData: {fileID: 11400000, guid: bf297e493d24d2b438884efbb155403f, type: 2}
-  sliderPlayer01: {fileID: 96388981}
-  textPlayer01: {fileID: 1372441218}
-  colorSliderP1: {fileID: 534712416}
-  textColorP1: {fileID: 1825076451}
-  sliderPlayer02: {fileID: 1457889275}
-  textPlayer02: {fileID: 360747555}
-  colorSliderP2: {fileID: 1465386794}
-  textColorP2: {fileID: 1365954713}
-  sliderMatchPoints: {fileID: 216461158}
-  textMatchPoints: {fileID: 1154379538}
-  sliderShotClock: {fileID: 210387103}
-  textShotClock: {fileID: 421818339}
+  _settingsData: {fileID: 11400000, guid: e36961c87323b5b4fb730112ea8b1032, type: 2}
+  _gameSettingsData: {fileID: 11400000, guid: bf297e493d24d2b438884efbb155403f, type: 2}
+  _sliderPlayer01: {fileID: 96388981}
+  _textPlayer01: {fileID: 1372441218}
+  _colorSliderP1: {fileID: 534712416}
+  _textColorP1: {fileID: 1825076451}
+  _sliderPlayer02: {fileID: 1457889275}
+  _textPlayer02: {fileID: 360747555}
+  _colorSliderP2: {fileID: 1465386794}
+  _textColorP2: {fileID: 1365954713}
+  _sliderMatchPoints: {fileID: 216461158}
+  _textMatchPoints: {fileID: 1154379538}
+  _sliderShotClock: {fileID: 210387103}
+  _textShotClock: {fileID: 421818339}
 --- !u!1 &2000913997
 GameObject:
   m_ObjectHideFlags: 0
@@ -10842,7 +10841,7 @@ RectTransform:
   m_Father: {fileID: 1713698102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11206,7 +11205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc8a02b1bbf9ad47a97554db6f8e06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpItem
-  respawnTime: 3
+  _respawnTime: 3
 --- !u!50 &2131235372
 Rigidbody2D:
   serializedVersion: 5

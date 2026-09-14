@@ -4,59 +4,67 @@ using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
-    [Header("Config UI panels")]
-    [SerializeField] private GameObject mainMenuPanel;
-    [SerializeField] private GameObject optionsPanel;
-    [SerializeField] private GameObject creditsPanel;
+    [Header("Config UI Panels")]
+    [SerializeField] private GameObject _mainMenuPanel;
+    [SerializeField] private GameObject _optionsPanel;
+    [SerializeField] private GameObject _creditsPanel;
 
     [Header("Config Buttons")]
-   
-    [SerializeField] private Button playButton;
-    [SerializeField] private Button optionsButton;
-    [SerializeField] private Button creditsButton;
-    [SerializeField] private Button exitButton;
-    [SerializeField] private Button backOptionsButton;
-    [SerializeField] private Button backCreditsButton;
+    [SerializeField] private Button _playButton;
+    [SerializeField] private Button _optionsButton;
+    [SerializeField] private Button _creditsButton;
+    [SerializeField] private Button _exitButton;
+    [SerializeField] private Button _backOptionsButton;
+    [SerializeField] private Button _backCreditsButton;
+
     private void Start()
     {
-        playButton.onClick.AddListener(PlayButton);
-        optionsButton.onClick.AddListener(ShowOptions);
-        creditsButton.onClick.AddListener(ShowCredits);
-        exitButton.onClick.AddListener(ExitButton);
+        _playButton.onClick.AddListener(PlayGame);
+        _optionsButton.onClick.AddListener(ShowOptions);
+        _creditsButton.onClick.AddListener(ShowCredits);
+        _exitButton.onClick.AddListener(ExitGame);
 
-       
-        backOptionsButton.onClick.AddListener(HideOptions);
-        backCreditsButton.onClick.AddListener(HideCredits);
+        _backOptionsButton.onClick.AddListener(HideOptions);
+        _backCreditsButton.onClick.AddListener(HideCredits);
     }
 
-    public void PlayButton()
+    private void OnDestroy()
     {
-        SceneManager.LoadScene("Gameplay"); 
+        _playButton.onClick.RemoveListener(PlayGame);
+        _optionsButton.onClick.RemoveListener(ShowOptions);
+        _creditsButton.onClick.RemoveListener(ShowCredits);
+        _exitButton.onClick.RemoveListener(ExitGame);
+
+        _backOptionsButton.onClick.RemoveListener(HideOptions);
+        _backCreditsButton.onClick.RemoveListener(HideCredits);
     }
 
-    public void ShowOptions()
+    private void PlayGame()
     {
-        optionsPanel.SetActive(true);
+        SceneManager.LoadScene("Gameplay");
     }
 
-    public void HideOptions()
+    private void ShowOptions()
     {
-        optionsPanel.SetActive(false);
+        _optionsPanel.SetActive(true);
     }
 
-    public void ShowCredits()
+    private void HideOptions()
     {
-        creditsPanel.SetActive(true);
+        _optionsPanel.SetActive(false);
     }
 
-    public void HideCredits()
+    private void ShowCredits()
     {
-        creditsPanel.SetActive(false);
+        _creditsPanel.SetActive(true);
     }
 
+    private void HideCredits()
+    {
+        _creditsPanel.SetActive(false);
+    }
 
-
-    public void ExitButton()
+    private void ExitGame()
     {
         Application.Quit();
 
