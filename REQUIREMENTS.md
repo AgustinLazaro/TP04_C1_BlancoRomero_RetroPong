@@ -16,7 +16,7 @@
 * \[x] Change paddle color to Black when hitting any screen boundary
 * \[x] Change paddle color randomly when hitting the ball
 * \[x] Add horizontal paddle movement (A/D and left/right arrows) bounded between midfield and goal line
-* \[ ] Define paddle behavior with Power-Ups (disable physical collisions or collect them on trigger)
+* \[x] Define paddle behavior with Power-Ups (disable physical collisions or collect them on trigger)
 
 ## Advanced Requirements
 
