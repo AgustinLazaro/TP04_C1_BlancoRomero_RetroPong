@@ -2005,6 +2005,7 @@ RectTransform:
   - {fileID: 1978440473}
   - {fileID: 1597668687}
   - {fileID: 1005068158}
+  - {fileID: 1611215215}
   m_Father: {fileID: 1984795252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2027,6 +2028,11 @@ MonoBehaviour:
   _textScoreP1: {fileID: 203206449}
   _textScoreP2: {fileID: 2022480983}
   _textShotClock: {fileID: 1129516454}
+  _winPanel: {fileID: 1611215214}
+  _winP1: {fileID: 910566734}
+  _winP2: {fileID: 1302121997}
+  _buttonReplay: {fileID: 1355045332}
+  _buttonBackMenu: {fileID: 1970352149}
 --- !u!1 &404477629
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,7 +4505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &910566735
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6080,7 +6086,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PLAYER 1
 
-    WINS'
+
+    WINS
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63cb00dfd2c78594fb1911d182edb19f, type: 2}
   m_sharedMaterial: {fileID: 6931801218879804316, guid: 63cb00dfd2c78594fb1911d182edb19f, type: 2}
@@ -6107,7 +6116,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 66.65
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6216,7 +6225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1302121998
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7901,7 +7910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1611215215
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7909,7 +7918,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611215214}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7918,7 +7927,7 @@ RectTransform:
   - {fileID: 1970352148}
   - {fileID: 910566735}
   - {fileID: 1302121998}
-  m_Father: {fileID: 1984795252}
+  m_Father: {fileID: 386136614}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8250,6 +8259,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PLAYER 2
 
+
     WINS'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63cb00dfd2c78594fb1911d182edb19f, type: 2}
@@ -8277,7 +8287,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 66.65
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10638,7 +10648,6 @@ RectTransform:
   m_Children:
   - {fileID: 1094614485}
   - {fileID: 102683269}
-  - {fileID: 1611215215}
   - {fileID: 386136614}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

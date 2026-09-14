@@ -19,13 +19,13 @@ public class MatchManager : MonoBehaviour
 
     private void Start()
     {
-        _hudManager.UpdateScore(_player1Score,_player2Score);
+        _hudManager.UpdateScore(_player1Score, _player2Score);
         StartRound();
     }
 
     private void Update()
     {
-        if (_isTimerRunning == true)
+        if (_isTimerRunning)
         {
             ShotClockUpdate();
         }
@@ -41,13 +41,11 @@ public class MatchManager : MonoBehaviour
             _isTimerRunning = false;
 
             _hudManager.UpdateShotClock(_shotClockTimer);
-
             ShotClockTimeout();
         }
         else
         {
-            //decreciendo
-            _hudManager.UpdateShotClock(_shotClockTimer); 
+            _hudManager.UpdateShotClock(_shotClockTimer);
         }
     }
 
@@ -56,12 +54,10 @@ public class MatchManager : MonoBehaviour
         if (_ball.transform.position.x < 0f)
         {
             _player2Score++;
-            Debug.Log($"Punto Jugador 2. puntaje: {_player1Score} - {_player2Score}");
         }
         else
         {
             _player1Score++;
-            Debug.Log($"Punto Jugador 1. puntaje: {_player1Score} - {_player2Score}");
         }
 
         _hudManager.UpdateScore(_player1Score, _player2Score);
@@ -73,13 +69,12 @@ public class MatchManager : MonoBehaviour
         if (scoringPlayer == 2)
         {
             _player2Score++;
-            Debug.Log($"Punto Jugador 2. puntaje: {_player1Score} - {_player2Score}");
         }
         else if (scoringPlayer == 1)
         {
             _player1Score++;
-            Debug.Log($"Punto Jugador 1. puntaje: {_player1Score} - {_player2Score}");
         }
+
         _hudManager.UpdateScore(_player1Score, _player2Score);
         CheckWinCondition();
     }
@@ -88,18 +83,16 @@ public class MatchManager : MonoBehaviour
     {
         if (_player1Score >= _settings.PointsToWin)
         {
-            Debug.Log("JUGADOR 1 GANA");
             _ball.ResetBall();
             _isTimerRunning = false;
+            _hudManager.ShowVictory(1);
         }
-
         else if (_player2Score >= _settings.PointsToWin)
         {
-            Debug.Log("JUGADOR 2 GANA");
             _ball.ResetBall();
             _isTimerRunning = false;
+            _hudManager.ShowVictory(2);
         }
-
         else
         {
             StartRound();
@@ -116,7 +109,4 @@ public class MatchManager : MonoBehaviour
         _ball.ResetBall();
         _ball.LaunchBall();
     }
-
 }
-
-
