@@ -9,7 +9,7 @@
 * \[x] Include all mechanics from TP03
 * \[x] Move all dynamic scene objects using physics (Rigidbody -> AddForce)
 * \[x] Progressively increase ball speed over time or upon impact
-* \[-] Code readability and standardization (variables, declarations, functions, and classes)
+* \[x] Code readability and standardization (variables, declarations, functions, and classes) -Except for the SO scripts folder there is still more to CHANGE.
 * \[x] Use Scriptable Objects for initialization variables
 * \[x] Best-of-5 match (first to 3 goals wins), configurable via "GameSettings" Scriptable Object
 * \[x] 20-second shot-clock limit to score (otherwise award goal against the side where the ball is), configurable via "GameSettings"
