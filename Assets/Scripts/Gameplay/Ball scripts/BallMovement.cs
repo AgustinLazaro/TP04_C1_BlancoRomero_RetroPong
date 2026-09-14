@@ -56,7 +56,8 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        // Paletas
+        if (collision.gameObject.TryGetComponent<Movement>(out Movement player))
         {
             _currentDirection.x = -_currentDirection.x;
             _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
@@ -64,16 +65,11 @@ public class BallMovement : MonoBehaviour
             _forceMagnitude += _settings.SpeedPerHit;
         }
 
-        if (collision.gameObject.CompareTag("Boundaries"))
+        // Techo y piso
+        if (collision.gameObject.TryGetComponent<Boundary>(out Boundary boundary))
         {
             _currentDirection.y = -_currentDirection.y;
             _currentDirection.x += Random.Range(-_randomBounce, _randomBounce);
-        }
-
-        if (collision.gameObject.CompareTag("Boundaries2"))
-        {
-            _currentDirection.x = -_currentDirection.x;
-            _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
         }
 
         _currentDirection = _currentDirection.normalized;
