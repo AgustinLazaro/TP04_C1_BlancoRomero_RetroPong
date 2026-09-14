@@ -94,12 +94,12 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Boundaries"))
+        if (collision.gameObject.TryGetComponent<Boundary>(out Boundary boundary))
         {
             _spriteRenderer.color = Color.black;
         }
 
-        if (collision.gameObject.CompareTag("Ball"))
+        if (collision.gameObject.TryGetComponent<BallMovement>(out BallMovement ball))
         {
             _spriteRenderer.color = new Color(Random.value, Random.value, Random.value);
         }
