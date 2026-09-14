@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MatchManager : MonoBehaviour
 {
-    [Header("UIreference")]
+    [Header("UI Reference")]
     [SerializeField] private HUDManager _hudManager;
 
     [Header("Config")]

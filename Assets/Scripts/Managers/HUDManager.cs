@@ -22,9 +22,15 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private Button _buttonBackMenu;
 
     private void Awake()
-    { 
+    {
         _buttonReplay.onClick.AddListener(RestartGame);
         _buttonBackMenu.onClick.AddListener(BackToMenu);
+    }
+
+    private void OnDestroy()
+    {
+        _buttonReplay.onClick.RemoveListener(RestartGame);
+        _buttonBackMenu.onClick.RemoveListener(BackToMenu);
     }
 
     public void UpdateScore(int p1Score, int p2Score)
