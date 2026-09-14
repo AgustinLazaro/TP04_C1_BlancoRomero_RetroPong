@@ -3086,7 +3086,7 @@ GameObject:
   - component: {fileID: 519626511}
   m_Layer: 0
   m_Name: wall_top_retro_0
-  m_TagString: Boundaries
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3329,7 +3329,7 @@ GameObject:
   - component: {fileID: 553512189}
   m_Layer: 7
   m_Name: Ball
-  m_TagString: Ball
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7390,7 +7390,7 @@ GameObject:
   - component: {fileID: 1571437559}
   m_Layer: 0
   m_Name: wall_bottom_retro_0
-  m_TagString: Boundaries
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

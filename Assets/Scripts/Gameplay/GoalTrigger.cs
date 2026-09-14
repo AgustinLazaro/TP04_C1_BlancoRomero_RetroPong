@@ -8,7 +8,7 @@ public class GoalTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Ball"))
+        if (other.TryGetComponent<BallMovement>(out BallMovement ball))
         {
             _matchManager.ScoreGoal(_scoringPlayer);
         }
