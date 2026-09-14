@@ -32,11 +32,12 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         ApplyInitialColor();
-        ApplySpeedSettings();
     }
 
     private void Update()
     {
+        ApplySpeedSettings();
+
         float yDirection = 0f;
         float xDirection = 0f;
 
@@ -62,7 +63,6 @@ public class Movement : MonoBehaviour
 
         _moveDirection = new Vector2(xDirection, yDirection).normalized;
     }
-
     private void FixedUpdate()
     {
         _rb.AddForce(_moveDirection * _moveSpeed, ForceMode2D.Force);
