@@ -6,9 +6,9 @@ public class GoalTrigger : MonoBehaviour
     [SerializeField] private int _scoringPlayer;
     [SerializeField] private MatchManager _matchManager;
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (collision.CompareTag("Ball"))
+        if (other.CompareTag("Ball"))
         {
             _matchManager.ScoreGoal(_scoringPlayer);
         }

@@ -1,22 +1,21 @@
 using UnityEngine;
+
 public class BallMovement : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private GameSettings _settings;
 
-    [Header("Components")]
-    [SerializeField] private Rigidbody2D rb;
-
     [Header("Angle Settings")]
-    [SerializeField] private float startAngleLimit = 0.7f;
-    [SerializeField] private float randomBounce = 0.20f;
+    [SerializeField] private float _startAngleLimit = 0.7f;
+    [SerializeField] private float _randomBounce = 0.20f;
 
-    private Vector2 currentDirection;
-    private float forceMagnitude;
+    private Rigidbody2D _rb;
+    private Vector2 _currentDirection;
+    private float _forceMagnitude;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -26,7 +25,7 @@ public class BallMovement : MonoBehaviour
 
     public void LaunchBall()
     {
-        forceMagnitude = _settings.InitialBallSpeed;
+        _forceMagnitude = _settings.InitialBallSpeed;
 
         float directionX;
         if (Random.Range(0, 2) == 0)
@@ -38,20 +37,20 @@ public class BallMovement : MonoBehaviour
             directionX = 1f;
         }
 
-        float directionY = Random.Range(-startAngleLimit, startAngleLimit);
+        float directionY = Random.Range(-_startAngleLimit, _startAngleLimit);
 
-        currentDirection = new Vector2(directionX, directionY).normalized;
+        _currentDirection = new Vector2(directionX, directionY).normalized;
 
-        rb.linearVelocity = Vector2.zero;
-        rb.angularVelocity = 0f;
+        _rb.linearVelocity = Vector2.zero;
+        _rb.angularVelocity = 0f;
 
-        rb.AddForce(currentDirection * forceMagnitude);
+        _rb.AddForce(_currentDirection * _forceMagnitude);
     }
 
     public void ResetBall()
     {
-        rb.linearVelocity = Vector2.zero;
-        rb.angularVelocity = 0f;
+        _rb.linearVelocity = Vector2.zero;
+        _rb.angularVelocity = 0f;
         transform.position = Vector3.zero;
     }
 
@@ -59,33 +58,29 @@ public class BallMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            currentDirection.x = currentDirection.x * -1f;
-            currentDirection.y += Random.Range(-randomBounce, randomBounce);
+            _currentDirection.x = -_currentDirection.x;
+            _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
 
-            forceMagnitude += _settings.SpeedPerHit;
+            _forceMagnitude += _settings.SpeedPerHit;
         }
 
         if (collision.gameObject.CompareTag("Boundaries"))
         {
-            currentDirection.y = currentDirection.y * -1f;
-            currentDirection.x += Random.Range(-randomBounce, randomBounce);
+            _currentDirection.y = -_currentDirection.y;
+            _currentDirection.x += Random.Range(-_randomBounce, _randomBounce);
         }
 
         if (collision.gameObject.CompareTag("Boundaries2"))
         {
-            currentDirection.x = currentDirection.x * -1f;
-            currentDirection.y += Random.Range(-randomBounce, randomBounce);
+            _currentDirection.x = -_currentDirection.x;
+            _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
         }
 
-        currentDirection = currentDirection.normalized;
+        _currentDirection = _currentDirection.normalized;
 
-        rb.linearVelocity = Vector2.zero;
-        rb.AddForce(currentDirection * forceMagnitude);
+        _rb.linearVelocity = Vector2.zero;
+        _rb.AddForce(_currentDirection * _forceMagnitude);
     }
-
-
-
-
 
     private void OnDrawGizmos()
     {
@@ -95,7 +90,7 @@ public class BallMovement : MonoBehaviour
         if (Application.isPlaying)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + (Vector3)currentDirection);
+            Gizmos.DrawLine(transform.position, transform.position + (Vector3)_currentDirection);
         }
     }
 }

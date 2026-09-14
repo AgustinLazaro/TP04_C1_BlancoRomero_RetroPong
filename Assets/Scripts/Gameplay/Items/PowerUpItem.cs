@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PowerUpItem : MonoBehaviour
 {
-    [SerializeField] private float respawnTime = 3f;
+    [SerializeField] private float _respawnTime = 3f;
 
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
@@ -22,12 +22,12 @@ public class PowerUpItem : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Power up obtenido");
+            Debug.Log("Power up agarrado");
 
             _spriteRenderer.enabled = false;
             _collider.enabled = false;
 
-            Invoke(nameof(Respawn), respawnTime);
+            Invoke(nameof(Respawn), _respawnTime);
         }
     }
 

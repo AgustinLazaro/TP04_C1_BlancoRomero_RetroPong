@@ -3,67 +3,65 @@ using UnityEngine;
 public class PlayerColor : MonoBehaviour
 {
     [Header("Player ID")]
-    [SerializeField] private int playerNumber = 1;
+    [SerializeField] private int _playerNumber = 1;
 
     [Header("Settings Data")]
-    [SerializeField] private PlayerSettings settingsData;
+    [SerializeField] private PlayerSettings _settingsData;
 
-    [Header("Visual References")]
-    [SerializeField] private SpriteRenderer sprite;
-
+    private SpriteRenderer _spriteRenderer;
     private float _lastColorIndex = -1f;
 
     private void Awake()
     {
-        sprite = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-       InitialColor();
+        ApplyInitialColor();
     }
 
     private void Update()
     {
-        MenuColorChange();
+        CheckMenuColorChange();
     }
 
-    private void MenuColorChange()
+    private void CheckMenuColorChange()
     {
         float currentIndex = 0f;
 
-        if (playerNumber == 1)
+        if (_playerNumber == 1)
         {
-            currentIndex = settingsData.p1ColorIndex;
+            currentIndex = _settingsData.p1ColorIndex;
         }
         else
         {
-            currentIndex = settingsData.p2ColorIndex;
+            currentIndex = _settingsData.p2ColorIndex;
         }
 
         if (currentIndex != _lastColorIndex)
         {
-            InitialColor();
+            ApplyInitialColor();
             _lastColorIndex = currentIndex;
         }
     }
 
-    private void InitialColor()
-    { 
-        if (playerNumber == 1)
+    private void ApplyInitialColor()
+    {
+        if (_playerNumber == 1)
         {
-            SetPlayerColor(settingsData.p1Color);
-            _lastColorIndex = settingsData.p1ColorIndex;
+            SetPlayerColor(_settingsData.p1Color);
+            _lastColorIndex = _settingsData.p1ColorIndex;
         }
         else
         {
-            SetPlayerColor(settingsData.p2Color);
-            _lastColorIndex = settingsData.p2ColorIndex;
+            SetPlayerColor(_settingsData.p2Color);
+            _lastColorIndex = _settingsData.p2ColorIndex;
         }
     }
 
     private void SetPlayerColor(Color newColor)
     {
-        sprite.color = newColor;
+        _spriteRenderer.color = newColor;
     }
 }

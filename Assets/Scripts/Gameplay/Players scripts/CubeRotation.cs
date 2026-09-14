@@ -2,34 +2,33 @@ using UnityEngine;
 
 public class CubeRotation : MonoBehaviour
 {
-    [SerializeField] private KeyCode RotateLeft = KeyCode.Q;
-    [SerializeField] private KeyCode RotateRight = KeyCode.E;
+    [SerializeField] private KeyCode _rotateLeft = KeyCode.Q;
+    [SerializeField] private KeyCode _rotateRight = KeyCode.E;
 
-    [SerializeField] private float rotationSpeed = 10f;
+    [SerializeField] private float _rotationSpeed = 10f;
 
     private void Update()
     {
-        if (Input.GetKeyDown(RotateLeft))
+        if (Input.GetKeyDown(_rotateLeft))
         {
-            transform.Rotate(0, 0, rotationSpeed);
+            transform.Rotate(0f, 0f, _rotationSpeed);
         }
 
-        if (Input.GetKeyDown(RotateRight))
+        if (Input.GetKeyDown(_rotateRight))
         {
-            transform.Rotate(0, 0, -rotationSpeed);
+            transform.Rotate(0f, 0f, -_rotationSpeed);
         }
 
-        //rotación mas fluida 
-        //if (Input.GetKey(RotateLeft))
+        // Smoother rotation alternative
+        //if (Input.GetKey(_rotateLeft))
         //{
-        //    transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+        //    transform.Rotate(0f, 0f, _rotationSpeed * Time.deltaTime);
         //}
 
-        //if (Input.GetKey(RotateRight))
+        //if (Input.GetKey(_rotateRight))
         //{
-        //    transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
+        //    transform.Rotate(0f, 0f, -_rotationSpeed * Time.deltaTime);
         //}
     }
 }
-
 
