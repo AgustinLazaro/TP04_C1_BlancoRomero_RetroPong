@@ -6,6 +6,10 @@ public class BallMovement : MonoBehaviour
     [SerializeField] private GameSettings _settings;
     [SerializeField] private ObjectPool _hitSparksPool;
 
+    [Header("Audio")]
+    [SerializeField] private AudioManager _audioManager;
+    [SerializeField] private AudioClip _hitSound;
+
     [Header("Angle Settings")]
     [SerializeField] private float _startAngleLimit = 0.7f;
     [SerializeField] private float _randomBounce = 0.20f;
@@ -71,6 +75,9 @@ public class BallMovement : MonoBehaviour
                 Vector2 contactPoint = collision.GetContact(0).point;
                 _hitSparksPool.Get(contactPoint);
             }
+
+            //SFX
+            _audioManager.PlaySFX(_hitSound);
         }
 
         // Techo y piso
@@ -98,7 +105,6 @@ public class BallMovement : MonoBehaviour
         }
     }
 }
-
 
 
 

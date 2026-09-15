@@ -2176,10 +2176,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -369965242776168628, guid: fe826fd46d2e2514e8ac49ec2047c944, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ef25c4dd42e57f44c97b32f0103bd09c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3826,6 +3826,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BallMovement
   _settings: {fileID: 11400000, guid: bf297e493d24d2b438884efbb155403f, type: 2}
   _hitSparksPool: {fileID: 1435099503}
+  _audioManager: {fileID: 393108973}
+  _hitSound: {fileID: 8300000, guid: ef25c4dd42e57f44c97b32f0103bd09c, type: 3}
   _startAngleLimit: 0.7
   _randomBounce: 0.2
 --- !u!96 &553512190
