@@ -4,6 +4,7 @@ public class BallMovement : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private GameSettings _settings;
+    [SerializeField] private ObjectPool _hitSparksPool;
 
     [Header("Angle Settings")]
     [SerializeField] private float _startAngleLimit = 0.7f;
@@ -63,6 +64,13 @@ public class BallMovement : MonoBehaviour
             _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
 
             _forceMagnitude += _settings.SpeedPerHit;
+
+            // Spawn Spark
+            if (_hitSparksPool)
+            {
+                Vector2 contactPoint = collision.GetContact(0).point;
+                _hitSparksPool.Get(contactPoint);
+            }
         }
 
         // Techo y piso
