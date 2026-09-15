@@ -13,7 +13,7 @@ public class ReturnParticleToPool : MonoBehaviour
     {
         if (poolOwner)
         {
-           // poolOwner.ReturnToPool(gameObject);
+            poolOwner.ReturnToPool(gameObject);
         }
         else
         {
