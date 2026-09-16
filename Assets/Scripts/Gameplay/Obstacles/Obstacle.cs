@@ -2,61 +2,37 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] private float _activeDuration = 4f;
-    [SerializeField] private float _respawnTime = 3f;
-    [SerializeField] private float _fixedDistanceX = 4f;
+    [Header("Despawn Settings")]
+    [SerializeField] private float _minDuration = 3f;
+    [SerializeField] private float _maxDuration = 7f;
 
-    private SpriteRenderer _spriteRenderer;
-    private Collider2D _collider;
-    private float _currentX;
+    private ObjectPool _originPool;
 
-    private void Awake()
+    public void SetPool(ObjectPool pool)
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _collider = GetComponent<Collider2D>();
+        _originPool = pool;
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        SetInitialPosition();
-        Invoke(nameof(HideObstacle), _activeDuration);
+        float activeDuration = Random.Range(_minDuration, _maxDuration);
+        Invoke(nameof(Despawn), activeDuration);
     }
 
-    private void HideObstacle()
+    private void OnDisable()
     {
-        _spriteRenderer.enabled = false;
-        _collider.enabled = false;
-
-        Invoke(nameof(RespawnObstacle), _respawnTime);
+        CancelInvoke(nameof(Despawn));
     }
 
-    private void RespawnObstacle()
+    private void Despawn()
     {
-        AlternatePosition();
-
-        _spriteRenderer.enabled = true;
-        _collider.enabled = true;
-
-        Invoke(nameof(HideObstacle), _activeDuration);
-    }
-
-    private void SetInitialPosition()
-    {
-        if (Random.Range(0, 2) == 0)
+        if (_originPool)
         {
-            _currentX = -_fixedDistanceX;
+            _originPool.ReturnToPool(gameObject);
         }
         else
         {
-            _currentX = _fixedDistanceX;
+            gameObject.SetActive(false);
         }
-
-        transform.position = new Vector2(_currentX, 0f);
-    }
-
-    private void AlternatePosition()
-    {
-        _currentX = -_currentX;
-        transform.position = new Vector2(_currentX, 0f);
     }
 }
