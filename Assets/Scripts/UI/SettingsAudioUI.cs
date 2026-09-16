@@ -14,6 +14,10 @@ public class SettingsAudioUI : MonoBehaviour
 
     private void Start()
     {
+        InitializeSlider(_masterSlider, "MasterVolume");
+        InitializeSlider(_musicSlider, "MusicVolume");
+        InitializeSlider(_sfxSlider, "SFXVolume");
+
         _masterSlider.onValueChanged.AddListener(SetMasterVolume);
         _musicSlider.onValueChanged.AddListener(SetMusicVolume);
         _sfxSlider.onValueChanged.AddListener(SetSFXVolume);
@@ -24,6 +28,14 @@ public class SettingsAudioUI : MonoBehaviour
         _masterSlider.onValueChanged.RemoveListener(SetMasterVolume);
         _musicSlider.onValueChanged.RemoveListener(SetMusicVolume);
         _sfxSlider.onValueChanged.RemoveListener(SetSFXVolume);
+    }
+
+    private void InitializeSlider(Slider slider, string paramName)
+    {
+        if (_audioMixer.GetFloat(paramName, out float currentDb))
+        {
+            slider.value = Mathf.Pow(10f, currentDb / 20f);
+        }
     }
 
     public void SetMasterVolume(float value)
