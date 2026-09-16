@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 41340363}
   - component: {fileID: 41340365}
   - component: {fileID: 41340364}
+  - component: {fileID: 41340366}
   m_Layer: 0
   m_Name: AudioPanel
   m_TagString: Untagged
@@ -464,6 +465,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41340362}
   m_CullTransparentMesh: 1
+--- !u!114 &41340366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41340362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5f92cecc6f74f40b72933326f5274b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSettingsUI
+  _audioMixer: {fileID: 24100000, guid: fe826fd46d2e2514e8ac49ec2047c944, type: 2}
+  _masterSlider: {fileID: 1902749002}
+  _musicSlider: {fileID: 508642766}
+  _sfxSlider: {fileID: 1078439530}
 --- !u!1 &43763917
 GameObject:
   m_ObjectHideFlags: 0
@@ -4008,10 +4025,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1945818090}
   m_HandleRect: {fileID: 892420961}
   m_Direction: 0
-  m_MinValue: 100
-  m_MaxValue: 500
-  m_WholeNumbers: 1
-  m_Value: 100
+  m_MinValue: 0
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7013,10 +7030,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 703291718}
   m_HandleRect: {fileID: 1855340293}
   m_Direction: 0
-  m_MinValue: 100
-  m_MaxValue: 500
-  m_WholeNumbers: 1
-  m_Value: 100
+  m_MinValue: 0
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -13233,10 +13250,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1368547532}
   m_HandleRect: {fileID: 107976795}
   m_Direction: 0
-  m_MinValue: 100
-  m_MaxValue: 500
-  m_WholeNumbers: 1
-  m_Value: 100
+  m_MinValue: 0
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
