@@ -302,13 +302,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IUmanager
   _mainMenuPanel: {fileID: 2051886197}
-  _optionsPanel: {fileID: 981150851}
+  _optionsPanel: {fileID: 176629146}
   _creditsPanel: {fileID: 1693647718}
+  _gameplayConfigPanel: {fileID: 981150851}
+  _audioPanel: {fileID: 967722399}
   _playButton: {fileID: 1819638480}
   _optionsButton: {fileID: 171766028}
   _creditsButton: {fileID: 1431347971}
   _exitButton: {fileID: 186761881}
-  _backOptionsButton: {fileID: 1017820102}
+  _openGameplayConfigButton: {fileID: 2074029737}
+  _openAudioPanelButton: {fileID: 1991748808}
+  _backOptionsButton: {fileID: 1242872878}
+  _backFromGameplayButton: {fileID: 1017820102}
+  _backFromAudioButton: {fileID: 569269323}
   _backCreditsButton: {fileID: 207108019}
 --- !u!114 &33038603
 MonoBehaviour:
@@ -10588,7 +10594,7 @@ GameObject:
   - component: {fileID: 1991748809}
   - component: {fileID: 1991748808}
   m_Layer: 0
-  m_Name: ButtonBack (2)
+  m_Name: ButtonAudioConfig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10927,7 +10933,7 @@ GameObject:
   - component: {fileID: 2074029738}
   - component: {fileID: 2074029737}
   m_Layer: 0
-  m_Name: ButtonBack (1)
+  m_Name: ButtonGameplayConfig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
