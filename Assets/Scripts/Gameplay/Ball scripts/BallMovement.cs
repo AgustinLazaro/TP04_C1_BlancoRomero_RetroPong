@@ -94,6 +94,13 @@ public class BallMovement : MonoBehaviour
             _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
         }
 
+        // Obstacle1
+        if (collision.gameObject.name == "Obstacle1")
+        {
+            _currentDirection.x = -_currentDirection.x;
+            _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
+        }
+
         // Techo y piso
         if (collision.gameObject.TryGetComponent<Boundary>(out Boundary boundary))
         {
