@@ -42,6 +42,12 @@ public class ObjectPool : MonoBehaviour
             powerUpScript.SetPool(this);
         }
 
+        Obstacle obstacleScript = newObject.GetComponent<Obstacle>();
+        if (obstacleScript)
+        {
+            obstacleScript.SetPool(this);
+        }
+
         poolQueue.Enqueue(newObject);
         return newObject;
     }
