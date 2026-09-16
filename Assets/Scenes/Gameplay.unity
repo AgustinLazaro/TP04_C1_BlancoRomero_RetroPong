@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 19349249}
   - component: {fileID: 19349248}
   m_Layer: 0
-  m_Name: ButtonBack (2)
+  m_Name: ButtonAudioConfig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2584,7 +2584,7 @@ GameObject:
   - component: {fileID: 386359075}
   - component: {fileID: 386359074}
   m_Layer: 0
-  m_Name: ButtonBack (1)
+  m_Name: ButtonGameplayConfig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14087,11 +14087,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuManager
   _pauseMenuPanel: {fileID: 1094614484}
-  _optionsPanel: {fileID: 102683268}
+  _optionsPanel: {fileID: 1071468190}
+  _gameplayConfigPanel: {fileID: 102683268}
+  _audioPanel: {fileID: 41340362}
   _continueButton: {fileID: 404477631}
   _optionsButton: {fileID: 1110989133}
   _backToMenuButton: {fileID: 1929262968}
-  _backOptionsButton: {fileID: 581947522}
+  _openGameplayConfigButton: {fileID: 386359074}
+  _openAudioPanelButton: {fileID: 19349248}
+  _backOptionsButton: {fileID: 1316172672}
+  _backFromGameplayButton: {fileID: 581947522}
+  _backFromAudioButton: {fileID: 1961419458}
 --- !u!114 &1984795257
 MonoBehaviour:
   m_ObjectHideFlags: 0
