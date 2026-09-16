@@ -15251,7 +15251,7 @@ Transform:
   m_GameObject: {fileID: 2131235368}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0439, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15328,10 +15328,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc8a02b1bbf9ad47a97554db6f8e06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpItem
-  _respawnTime: 3
+  _respawnTime: 5
   _shieldP1: {fileID: 558705936}
   _shieldP2: {fileID: 828828075}
-  _shieldDuration: 5
+  _shieldDuration: 3
+  _minXP1: -4
+  _maxXP1: -2
+  _minXP2: 2
+  _maxXP2: 4
+  _minY: -2
+  _maxY: 2
+  _hitSparksPool: {fileID: 1435099503}
 --- !u!50 &2131235372
 Rigidbody2D:
   serializedVersion: 5

@@ -80,6 +80,20 @@ public class BallMovement : MonoBehaviour
             _audioManager.PlaySFX(_hitSound);
         }
 
+        // shield 1
+        if (collision.gameObject.name == "Shield_P1")
+        {
+            _currentDirection.x = -_currentDirection.x;
+            _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
+        }
+
+        // shield 2
+        if (collision.gameObject.name == "Shield_P2")
+        {
+            _currentDirection.x = -_currentDirection.x;
+            _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
+        }
+
         // Techo y piso
         if (collision.gameObject.TryGetComponent<Boundary>(out Boundary boundary))
         {
