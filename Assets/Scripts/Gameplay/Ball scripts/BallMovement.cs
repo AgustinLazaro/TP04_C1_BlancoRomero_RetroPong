@@ -94,8 +94,8 @@ public class BallMovement : MonoBehaviour
             _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
         }
 
-        // Obstacle1
-        if (collision.gameObject.name == "Obstacle1")
+        //Obstacle1
+        if (collision.gameObject.TryGetComponent<Obstacle>(out Obstacle obstacle1))
         {
             _currentDirection.x = -_currentDirection.x;
             _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
