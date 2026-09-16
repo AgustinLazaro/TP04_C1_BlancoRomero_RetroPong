@@ -3,6 +3,11 @@ using UnityEngine;
 public class PowerUpItem : MonoBehaviour
 {
     [SerializeField] private float _respawnTime = 3f;
+    [SerializeField] private GameObject _shieldP1;
+    [SerializeField] private GameObject _shieldP2;
+    [SerializeField] private float _shieldDuration = 5f;
+    [SerializeField] private float _minY = -3f;
+    [SerializeField] private float _maxY = 3f;
 
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
@@ -24,11 +29,39 @@ public class PowerUpItem : MonoBehaviour
         {
             Debug.Log("Power up agarrado");
 
+            ActivateShield(other.gameObject.name);
+
             _spriteRenderer.enabled = false;
             _collider.enabled = false;
 
             Invoke(nameof(Respawn), _respawnTime);
         }
+    }
+
+    private void ActivateShield(string playerName)
+    {
+        if (playerName == "Player1")
+        {
+            CancelInvoke(nameof(DeactivateShieldP1));
+            _shieldP1.SetActive(true);
+            Invoke(nameof(DeactivateShieldP1), _shieldDuration);
+        }
+        else if (playerName == "Player2")
+        {
+            CancelInvoke(nameof(DeactivateShieldP2));
+            _shieldP2.SetActive(true);
+            Invoke(nameof(DeactivateShieldP2), _shieldDuration);
+        }
+    }
+
+    private void DeactivateShieldP1()
+    {
+        _shieldP1.SetActive(false);
+    }
+
+    private void DeactivateShieldP2()
+    {
+        _shieldP2.SetActive(false);
     }
 
     private void Respawn()
@@ -51,6 +84,8 @@ public class PowerUpItem : MonoBehaviour
             positionX = 2f;
         }
 
-        transform.position = new Vector2(positionX, transform.position.y);
+        float positionY = Random.Range(_minY, _maxY);
+
+        transform.position = new Vector2(positionX, positionY);
     }
 }

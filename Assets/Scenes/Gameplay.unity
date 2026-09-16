@@ -15329,6 +15329,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpItem
   _respawnTime: 3
+  _shieldP1: {fileID: 558705936}
+  _shieldP2: {fileID: 828828075}
+  _shieldDuration: 5
 --- !u!50 &2131235372
 Rigidbody2D:
   serializedVersion: 5
