@@ -7,6 +7,13 @@ public class PowerUpItem : MonoBehaviour
     [SerializeField] private float _shieldDuration = 3f;
     [SerializeField] private ObjectPool _hitSparksPool;
 
+    private ObjectPool _originPool;
+
+    public void SetPool(ObjectPool pool)
+    {
+        _originPool = pool;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent<Movement>(out Movement player))
@@ -15,7 +22,14 @@ public class PowerUpItem : MonoBehaviour
 
             ActivateShield(other.gameObject.name);
 
-            gameObject.SetActive(false);
+            if (_originPool)
+            {
+                _originPool.ReturnToPool(gameObject);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 

@@ -36,6 +36,12 @@ public class ObjectPool : MonoBehaviour
             returnScript.SetPool(this);
         }
 
+        PowerUpItem powerUpScript = newObject.GetComponent<PowerUpItem>();
+        if (powerUpScript)
+        {
+            powerUpScript.SetPool(this);
+        }
+
         poolQueue.Enqueue(newObject);
         return newObject;
     }
