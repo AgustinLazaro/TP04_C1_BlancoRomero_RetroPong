@@ -29,6 +29,13 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
+#if UNITY_WEBGL
+        if (_exitButton)
+        {
+            _exitButton.gameObject.SetActive(false);
+        }
+#endif
+
         _playButton.onClick.AddListener(PlayGame);
         _optionsButton.onClick.AddListener(ShowOptions);
         _creditsButton.onClick.AddListener(ShowCredits);
