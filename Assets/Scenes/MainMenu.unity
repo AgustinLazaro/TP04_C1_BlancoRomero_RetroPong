@@ -7304,7 +7304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game by Agustin Lazaro Blanco Romero.\n\nUI by kenney_ui-pack-adventure\n\nRacket
+  m_text: "Game by Agustin Lazaro Blanco Romero\n\nUI by kenney_ui-pack-adventure\n\nRacket
     png  by Smashicons \n\nBall png  by Magnific\n\nboundaries png by Gemini"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
