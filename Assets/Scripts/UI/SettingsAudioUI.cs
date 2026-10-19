@@ -40,6 +40,9 @@ public class SettingsAudioUI : MonoBehaviour
 
     public void SetMasterVolume(float value)
     {
+        // Bug: en Gameplay.unity los tres sliders de volumen tienen m_MinValue: 0 (en MainMenu.unity sí están en 0.0001).
+        // Con value = 0, Mathf.Log10(0) devuelve -Infinity y el AudioMixer queda con un parámetro inválido del que ya no se recupera hasta reiniciar.
+        // Poné el mínimo en 0.0001 también en la escena de juego, o clampeá acá: Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20f.
         _audioMixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20f);
     }
 

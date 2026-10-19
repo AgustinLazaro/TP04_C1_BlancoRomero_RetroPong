@@ -94,6 +94,8 @@ public class SettingsPanelUI : MonoBehaviour
     {
         _settingsData.p1ColorIndex = value;
 
+        // Warning: la cadena de if compara floats con ==. Hoy funciona porque el slider tiene m_WholeNumbers en 1, pero alcanza con que alguien lo desactive para que ningún caso entre y el color quede sin cambiar.
+        // Redondeá primero (int index = Mathf.RoundToInt(value);) y usá un switch sobre el int, o mejor guardá los colores en un Color[] serializado e indexá.
         if (value == 0f)
         {
             _settingsData.p1Color = Color.white;
@@ -101,6 +103,8 @@ public class SettingsPanelUI : MonoBehaviour
         }
         else if (value == 1f)
         {
+            // Suggestion: la opción 1 del jugador 1 muestra "bisque" mientras el resto de las etiquetas están en mayúscula y en español (AZUL, AMARILLO, CELESTE).
+            // Quedó el nombre del Color de Unity sin traducir.
             _settingsData.p1Color = Color.bisque;
             _textColorP1.text = "bisque";
         }

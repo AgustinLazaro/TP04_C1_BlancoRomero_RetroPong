@@ -46,6 +46,8 @@ public class PlayerColor : MonoBehaviour
         }
     }
 
+    // Suggestion: ApplyInitialColor está escrito dos veces, acá y en Movement.cs:83, y las dos versiones corren en el Start del mismo objeto.
+    // Dejá el color en un solo script (este, que ya se ocupa del tema) y sacale a Movement la responsabilidad del color inicial.
     private void ApplyInitialColor()
     {
         if (_playerNumber == 1)

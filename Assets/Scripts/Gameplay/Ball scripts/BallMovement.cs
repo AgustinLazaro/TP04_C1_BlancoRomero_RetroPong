@@ -25,6 +25,8 @@ public class BallMovement : MonoBehaviour
 
     private void Start()
     {
+        // Suggestion: acá llamás a LaunchBall y MatchManager.Start también lo hace a través de StartRound, así que la pelota se lanza dos veces al arrancar.
+        // Como el orden entre los dos Start no está garantizado, dejá que la pelota la lance solo el MatchManager y borrá este Start.
         LaunchBall();
     }
 
@@ -67,6 +69,8 @@ public class BallMovement : MonoBehaviour
             _currentDirection.x = -_currentDirection.x;
             _currentDirection.y += Random.Range(-_randomBounce, _randomBounce);
 
+            // Warning: _forceMagnitude crece en cada toque de paleta y no tiene tope. En un peloteo largo la pelota puede terminar moviéndose más rápido que el grosor de los colliders y atravesarlos.
+            // Acotalo con Mathf.Min(_forceMagnitude + _settings.SpeedPerHit, maxForce) y serializá maxForce, o mejor todavía sumalo al GameSettings, que ya es el lugar donde viven estas constantes.
             _forceMagnitude += _settings.SpeedPerHit;
 
             // Spawn Spark
@@ -81,6 +85,8 @@ public class BallMovement : MonoBehaviour
         }
 
         // shield 1
+        // Warning: los escudos se detectan por el nombre del GameObject, con el string escrito a mano y repetido en la línea 91 y en PowerUpSpawner.cs:49.
+        // Si alguien renombra el objeto en la escena, el rebote deja de funcionar y no hay ningún error que lo avise. Usá un componente marcador (como ya hacés con Boundary y Obstacle) y resolvelo con TryGetComponent.
         if (collision.gameObject.name == "Shield_P1")
         {
             _currentDirection.x = -_currentDirection.x;
@@ -114,6 +120,8 @@ public class BallMovement : MonoBehaviour
         _rb.AddForce(_currentDirection * _forceMagnitude);
     }
 
+    // Suggestion: este OnDrawGizmos dibuja una esfera amarilla de radio 1 sobre la pelota en todo momento, también con el juego parado.
+    // Si lo querés conservar para depurar, pasalo a OnDrawGizmosSelected y bajale el radio.
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

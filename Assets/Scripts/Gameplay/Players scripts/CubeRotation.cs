@@ -19,6 +19,8 @@ public class CubeRotation : MonoBehaviour
             transform.Rotate(0f, 0f, -_rotationSpeed);
         }
 
+        // Suggestion: quedaron diez líneas comentadas con la alternativa de rotación suave.
+        // Elegí una de las dos y borrá la otra: el historial de git ya guarda lo que descartaste.
         // Smoother rotation alternative
         //if (Input.GetKey(_rotateLeft))
         //{

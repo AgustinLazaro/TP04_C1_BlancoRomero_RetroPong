@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
+    // Suggestion: el [Header] quedó con el carácter roto ("Configuraci?n"), porque el archivo se guardó con una codificación distinta a UTF-8.
+    // Reescribí la línea desde el editor y guardá el archivo en UTF-8, así no se propaga a los demás.
     [Header("Configuración del Pool")]
     [SerializeField] private GameObject prefab;
     [SerializeField] private int initialPoolSize = 5;
@@ -62,6 +64,8 @@ public class ObjectPool : MonoBehaviour
         }
         else
         {
+            // Suggestion: esta rama funciona, pero cuesta leerla: CreateNewInstance ya encola el objeto y después lo desencolás para devolverlo.
+            // Es más claro sacar el Enqueue de CreateNewInstance y encolar solo desde InitializePool y desde ReturnToPool.
             objectToSpawn = CreateNewInstance();
             poolQueue.Dequeue();
         }

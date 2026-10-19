@@ -12,6 +12,8 @@ public class PlayerSettings : ScriptableObject
     [SerializeField] private Color defaultP2Color = new Color(1f, 0.44f, 0.44f);
 
     [Header("Settings player 1")]
+    // Warning: los seis campos de configuración son public y los escribe SettingsPanelUI desde afuera.
+    // Respondiendo al comentario de abajo: sí, podés usar properties. El patrón es [SerializeField] private float _p1Speed; public float P1Speed => _p1Speed; y un public void SetP1Speed(float value) que valide el rango antes de asignar.
     public float p1Speed = 300f;
     public float p1ColorIndex = 0f;
     public Color p1Color = Color.white;

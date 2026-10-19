@@ -36,6 +36,8 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        // Warning: ApplySpeedSettings se ejecuta en cada frame para copiar un valor que solo cambia cuando el jugador mueve el slider, y encima pisa _moveSpeed, que está serializado y se ve en el inspector.
+        // Leé la velocidad del SO en el Start y volvé a leerla cuando el panel de settings se cierra (o con un evento que dispare el slider).
         ApplySpeedSettings();
 
         float yDirection = 0f;
